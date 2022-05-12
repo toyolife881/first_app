@@ -1,0 +1,13 @@
+<h1>新規投稿ページ</h1>
+
+<%# <form action="/posts" method ="post">
+ <input type="text" name="content">
+ <input type="submit" value="投稿する">
+</form> %>
+
+<%# (url:〜post,まで)投稿ボタンを押した時にどのようなリクエストが送られるのかあらかじめ設定しておく %>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
+  <%# :contentは、paramsのキーになっている。バリューは実際に入力した値。 %>
+  <%= form.text_field :content %>
+  <%= form.submit '投稿する' %>
+<% end %>
